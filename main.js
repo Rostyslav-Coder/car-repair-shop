@@ -13,10 +13,14 @@ navigatinButton.addEventListener('click', () => {
 });
 
 const navButtons = document.querySelectorAll('.nav__button');
+const isDesktop = window.matchMedia('(min-width: 1024px)');
 navButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    navigator.style.display = 'none';
-    navigatinButton.style.transform = 'rotate(0)';
+    // Если устройство не является "десктопом", применяем стили
+    if (!isDesktop.matches) {
+      navigator.style.display = 'none';
+      navigatinButton.style.transform = 'rotate(0)';
+    }
   });
 });
 
