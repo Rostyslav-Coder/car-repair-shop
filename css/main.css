@@ -237,8 +237,6 @@ body {
   column-gap: 5%;
   z-index: 5;
   border: 1px solid var(--white, #fefefe);
-  justify-content: center;
-  align-items: center;
 }
 .service__card {
   display: flex;
@@ -397,15 +395,18 @@ body {
   .nav__button {
     font-size: 1.2rem;
   }
+  /* ========== Banner Styles ========== */
   .employers {
     width: 50%;
   }
+  /* ========== About Styles ========== */
   .about {
     background-size: 70%;
   }
   .about__wrapper {
     gap: 1rem;
   }
+  /* ========== Service Styles ========== */
   .service__cards {
     grid-template-columns: repeat(5, 1fr);
     padding-bottom: 0;
@@ -416,6 +417,7 @@ body {
   .employee_girl {
     height: 80vh;
   }
+  /* ========== Revirw Styles ========== */
   .review {
     min-height: 100vh;
     background-size: 70%;
@@ -436,13 +438,37 @@ body {
 
 /* =============== Laptop Styles =============== */
 @media screen and (min-width: 1024px) {
+  /* ========== Main Styles ========== */
   .content {
     padding: 2rem;
+  }
+  /* ========== Header Styles ========== */
+  .header {
+    display: block;
+  }
+  .navigator__button {
+    display: none;
+  }
+  /* ========== Banner Styles ========== */
+  .banner {
+    padding: 9rem 0;
   }
   .banner__form>input {
     cursor: pointer;
   }
-  .service__cards>.text {
+  /* ========== About Styles ========== */
+  .about {
+    padding: 9rem 0;
+  }
+  /* ========== Service Styles ========== */
+  .service {
+    padding: 9rem 0 2rem;
+  }
+  .service__card {
     cursor: pointer;
+  }
+  /* ========== Revirw Styles ========== */
+  .review {
+    padding: 9rem 0;
   }
 }
