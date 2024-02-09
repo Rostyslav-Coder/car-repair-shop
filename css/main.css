@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 
-/* Main Styles */
+/* ========== Main Styles ========== */
 :root {
   --black: #222222;
   --dark: #041622;
@@ -58,7 +58,8 @@ body {
   text-align: justify;
 }
 
-/* Navigator Button Styles */
+/* =============== Mobile Vertcal Styles =============== */
+/* ========== Navigator Button Styles ========== */
 .navigator__button {
   position: fixed;
   bottom: 3rem;
@@ -76,7 +77,7 @@ body {
 
 }
 
-/* Header Styles */
+/* ========== Header Styles ========== */
 .header {
   position: fixed;
   right: 0;
@@ -117,7 +118,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Banner Styles */
+/* ========== Banner Styles ========== */
 .banner {
   position: relative;
   background-image: url(../img/banner/banner-bg.jpg);
@@ -173,7 +174,7 @@ body {
   opacity: 0;
 }
 
-/* About Styles */
+/* ========== About Styles ========== */
 .about {
   padding: 10vh 0;
   overflow: hidden;
@@ -207,7 +208,7 @@ body {
   z-index: 6;
 }
 
-/* Service Styles */
+/* ========== Service Styles ========== */
 .service {
   position: relative;
   background-image: url(../img/service/service-bg.jpg);
@@ -270,7 +271,7 @@ body {
   transform-origin: bottom;
 }
 
-/* Revirw Styles */
+/* ========== Revirw Styles ========== */
 .review {
   position: relative;
   padding: 10vh 0;
@@ -328,7 +329,7 @@ body {
   opacity: 0;
 }
 
-/* Contact Styles */
+/* ========== Contact Styles ========== */
 .contact {
   padding: 6rem 0 2rem;
   background-image: url(../img/contact/contacn-bg.jpg);
@@ -365,9 +366,36 @@ body {
   text-decoration: none;
 }
 
+/* =============== Mobile Horizontal Styles =============== */
 @media screen and (orientation: landscape) {
+  /* ========== Main Styles ========== */
   .wrapper {
     width: 80%;
+  }
+  /* ========== Header Styles ========== */
+  .header {
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    padding: 0;
+    border-bottom: 2px solid var(--white, #fefefe);
+    border-left: none;
+  }
+  .header__wrapper {
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header__logo {
+    width: 4rem;
+  }
+  .navigator {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .nav__button {
+    font-size: 1.2rem;
   }
   .employers {
     width: 50%;
@@ -406,6 +434,7 @@ body {
   }
 }
 
+/* =============== Laptop Styles =============== */
 @media screen and (min-width: 1024px) {
   .content {
     padding: 2rem;
