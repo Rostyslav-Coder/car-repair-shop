@@ -58,6 +58,65 @@ body {
   text-align: justify;
 }
 
+/* Navigator Button Styles */
+.navigator__button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3.5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--white, #fefefe);
+  border-radius: 50%;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--grey, #2f3534);
+  font-size: 6rem;
+
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  right: 0;
+  width: 75%;
+  height: 100vh;
+  padding: 2rem;
+  background-color: var(--grey, #2f3534);
+  border-left: 2px solid var(--white, #fefefe);
+  z-index: 1000;
+  display: none;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5rem;
+}
+.header__logo {
+  align-self: center;
+  width: 6rem;
+}
+.logo {
+  width: 100%;
+}
+.navigator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.nav__button {
+  color: var(--white, #fefefe);
+  font-family: 'Orbitron', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 /* Banner Styles */
 .banner {
   position: relative;

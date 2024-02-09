@@ -1,3 +1,26 @@
+// =============== HEADER MOBILE ANIMATION ===============
+const navigatinButton = document.querySelector('.navigator__button');
+const navigator = document.querySelector('.header');
+
+navigatinButton.addEventListener('click', () => {
+  if (navigator.style.display === 'none') {
+    navigator.style.display = 'block';
+    navigatinButton.style.transform = 'rotate(45deg)';
+  } else {
+    navigator.style.display = 'none';
+    navigatinButton.style.transform = 'rotate(0)';
+  }
+});
+
+const navButtons = document.querySelectorAll('.nav__button');
+navButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    navigator.style.display = 'none';
+    navigatinButton.style.transform = 'rotate(0)';
+  });
+});
+
+// =============== BANNER EMPLOYERS IMAGE ANIMATION ===============
 window.addEventListener('load', () => {
   const employee = document.querySelector('.employers');
   setTimeout(() => {
@@ -15,17 +38,17 @@ function checkScreenOrientation() {
   document.querySelector('.employers').src = imgSrc;
 }
 
-// Вызов функции при загрузке страницы
+// Calling a function when the page loads
 window.addEventListener('load', checkScreenOrientation);
 
-// Вызов функции при изменении размера окна
+// Calling a function when the window size is changed
 window.addEventListener('resize', checkScreenOrientation);
 
-// Создаем наблюдателя
+// =============== SERVICE EMPLOYEE IMAGE ANIMATION ===============
 // eslint-disable-next-line no-shadow
-const observer = new IntersectionObserver((entries, observer) => {
+const employeeObserver = new IntersectionObserver((entries, employeeObserver) => {
   entries.forEach((entry) => {
-    // Если элемент service виден на 60%, начинаем анимацию
+    // If the service element is 60% visible, start the animation
     if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
       const employee = document.querySelector('.employee_girl');
       employee.style.transition = '2s';
@@ -34,20 +57,20 @@ const observer = new IntersectionObserver((entries, observer) => {
       employee.style.transformOrigin = 'bottom left';
       employee.style.transform = 'scale(1.2)';
 
-      // Останавливаем наблюдение после начала анимации
-      observer.unobserve(entry.target);
+      // Stopping observation after the animation starts
+      employeeObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.6 }); // Устанавливаем порог в 60%
+}, { threshold: 0.6 }); // Set the threshold to 60%
 
-// Начинаем наблюдение за элементом service
-observer.observe(document.querySelector('.service'));
+// Let's begin observing the service element
+employeeObserver.observe(document.querySelector('.service'));
 
-// Создаем наблюдателя
+// =============== REVIEW CUSTOMER IMAGE ANIMATION ===============
 // eslint-disable-next-line no-shadow
 const customerObserver = new IntersectionObserver((entries, customerObserver) => {
   entries.forEach((entry) => {
-    // Если элемент service виден на 60%, начинаем анимацию
+    // If the service element is 80% visible, start the animation
     if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
       const customer = document.querySelector('.customer');
       customer.style.transition = '2s';
@@ -56,11 +79,11 @@ const customerObserver = new IntersectionObserver((entries, customerObserver) =>
       customer.style.transformOrigin = 'bottom right';
       customer.style.transform = 'scale(1.2)';
 
-      // Останавливаем наблюдение после начала анимации
+      // Stopping observation after the animation starts
       customerObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.8 }); // Устанавливаем порог в 80%
+}, { threshold: 0.8 }); // Set the threshold to 80%
 
-// Начинаем наблюдение за элементом service
+// Let's begin observing the service element
 customerObserver.observe(document.querySelector('.review'));
