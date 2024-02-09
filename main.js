@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
     employee.style.opacity = '1';
     employee.style.transformOrigin = 'bottom';
     employee.style.transform = 'scale(1.2)';
-  }, 2500);
+  }, 1500);
 });
 
 function checkScreenOrientation() {
@@ -70,8 +70,8 @@ employeeObserver.observe(document.querySelector('.service'));
 // eslint-disable-next-line no-shadow
 const customerObserver = new IntersectionObserver((entries, customerObserver) => {
   entries.forEach((entry) => {
-    // If the service element is 80% visible, start the animation
-    if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+    // If the service element is 60% visible, start the animation
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
       const customer = document.querySelector('.customer');
       customer.style.transition = '2s';
       customer.style.transitionProperty = 'opacity, transform';
@@ -83,7 +83,7 @@ const customerObserver = new IntersectionObserver((entries, customerObserver) =>
       customerObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.8 }); // Set the threshold to 80%
+}, { threshold: 0.6 }); // Set the threshold to 60%
 
 // Let's begin observing the service element
 customerObserver.observe(document.querySelector('.review'));
